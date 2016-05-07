@@ -1,6 +1,8 @@
 Dokuwiki docker image
 =====================
 
+[Dokuwiki](https://www.dokuwiki.org/) running on lighttpd
+
 Running
 -------
 
