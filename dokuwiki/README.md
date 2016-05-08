@@ -3,12 +3,17 @@ Dokuwiki docker image
 
 [Dokuwiki](https://www.dokuwiki.org/) running on lighttpd
 
+The wiki is published on /dokuwiki , the setup interface is on
+/dokuwiki/install.php
+
 Running
 -------
 
-### Simple ###
+### Simple run ###
 
-    docker run -d -p 8080:80 apaolini/dokuwiki
+* Run: `docker run -d -p 8080:80 apaolini/dokuwiki`
+* Go to http://127.0.0.1:8080/dokuwiki/install.php and setup the wiki engine
+* The wiki will be available on http://127.0.0.1:8080/dokuwiki/doku.php
 
 ### Run persisting data and configurations ###
 ```
@@ -27,6 +32,6 @@ Build
 
 Caveat
 ------
-After the first configuration remember to disable the administration interface. You can simply use the _nuclear_ tactic and remove the `install.php` file, like that:
+After the first configuration remember to disable the administration interface removing the `install.php` file, like that:
 
-    docker exec dokuwiki_containername /bin/rm /var/www/dokuwiki/install.php
+    docker exec <DOKUWIKI_CONTAINERAME> /bin/rm /var/www/dokuwiki/install.php
