@@ -7,8 +7,7 @@ FROM ubuntu:14.04
 MAINTAINER Andrea Paolini <ap@nuxi.it>
 
 # Dokuwiki Version
-ENV DOKUWIKI_VERSION  2015-08-10a
-ENV DOKUWIKI_CHECKSUM a4b8ae00ce94e42d4ef52dd8f4ad30fe
+ENV DOKUWIKI_VERSION  2016-06-26
 
 # Install lighttpd and PHP
 RUN  apt-get update \
@@ -18,8 +17,7 @@ RUN  apt-get update \
   && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 # Get and deploy dokuwiki
-RUN curl -s -o /dokuwiki.tgz "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-$DOKUWIKI_VERSION.tgz" \
-  && if [ "$DOKUWIKI_CHECKSUM" != "$(md5sum /dokuwiki.tgz | awk '{print($1)}')" ];then echo "Wrong md5sum of downloaded file!"; exit 1; fi \
+RUN curl -s -o /dokuwiki.tgz "http://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz" \
   && cd /var/www/ \
   && tar -zxf /dokuwiki.tgz \
   && mv dokuwiki-${DOKUWIKI_VERSION} dokuwiki \
