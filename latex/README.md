@@ -22,4 +22,4 @@ replacing `<COMMAND>` with the command you'll use with a traditional installatio
 
 Build
 -----
-    docker build -t apaolini/dokuwiki .
+    docker build -t apaolini/latex .
