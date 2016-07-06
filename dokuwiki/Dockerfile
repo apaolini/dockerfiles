@@ -7,7 +7,7 @@ FROM ubuntu:14.04
 MAINTAINER Andrea Paolini <ap@nuxi.it>
 
 # Dokuwiki Version
-ENV DOKUWIKI_VERSION  2016-06-26
+ENV DOKUWIKI_VERSION  2016-06-26a
 
 # Install lighttpd and PHP
 RUN  apt-get update \
