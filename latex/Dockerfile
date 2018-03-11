@@ -1,7 +1,7 @@
 # BUILD:  docker build -t apaolini/latex .
 # RUN:    docker run --rm -ti --user="$(id -u):$(id -g)" -v $(pwd):/data apaolini/latex <COMMAND>
 
-FROM ubuntu:14.04
+FROM debian:stable
 MAINTAINER Andrea Paolini <ap@nuxi.it>
 
 RUN apt-get update \
